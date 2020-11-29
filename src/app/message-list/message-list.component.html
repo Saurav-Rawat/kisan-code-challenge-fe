@@ -1,0 +1,18 @@
+<div fxLayout="column">
+  <h1>List Of Sent Messages</h1>
+  <div
+    fxLayout="row wrap"
+    class="message-list-container"
+    *ngIf="listOfAllSms && listOfAllSms.length"
+    fxLayoutGap="4px"
+  >
+    <div class="card" fxLayout="column" *ngFor="let contact of listOfAllSms">
+      <h2>Message:</h2>
+      <h3>{{ contact.body }}</h3>
+      <h2>Sent To:</h2>
+      <h3>{{ contact.to }}</h3>
+      <h2>Sent On:</h2>
+      <h3>{{ contact.dateSent | date }}</h3>
+    </div>
+  </div>
+</div>

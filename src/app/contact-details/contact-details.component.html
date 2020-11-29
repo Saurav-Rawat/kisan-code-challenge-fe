@@ -1,0 +1,28 @@
+<div class="container" fxLayout="column">
+  <div class="contact-info" *ngIf="contact" fxLayout="column">
+    <div fxLayout="row wrap">
+      <span fxFlex="50"
+        ><h3>First Name</h3>
+        <input type="text" [value]="contact?.firstName" readonly
+      /></span>
+      <span fxFlex="50"
+        ><h3>Last Name</h3>
+        <input type="text" [value]="contact?.lastName" readonly
+      /></span>
+    </div>
+    <div fxLayout="column" class="m-t-4">
+      <h3>Phone</h3>
+      <input type="text" [value]="contact?.phone" readonly />
+    </div>
+    <div class="m-t-20">
+      <button
+        fxLayoutAlign="center center"
+        mat-raised-button
+        class="Primary m-t-12 p-l-4"
+        (click)="onSendMessageClick(contactId)"
+      >
+        Send Message
+      </button>
+    </div>
+  </div>
+</div>

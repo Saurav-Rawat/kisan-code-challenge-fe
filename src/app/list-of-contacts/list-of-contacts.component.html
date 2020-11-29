@@ -1,0 +1,67 @@
+<div class="container" fxLayout="column">
+  <div fxLayout="column">
+    <h1>Create New Contact</h1>
+    <div class="m-t-24" fxLayout="column">
+      <form [formGroup]="userForm" fxLayout="column">
+        <div>
+          <input
+            formControlName="firstName"
+            matInput
+            placeholder="First Name"
+          />
+        </div>
+        <div>
+          <input formControlName="lastName" matInput placeholder="Last Name" />
+        </div>
+
+        <div>
+          <input formControlName="phone" matInput placeholder="Phone" />
+        </div>
+
+        <div>
+          <button
+            [disabled]="userForm.invalid"
+            mat-raised-button
+            class="Primary m-t-12"
+            (click)="createContact()"
+          >
+            Create Contact
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div fxLayout="column">
+    <h1>list of contact</h1>
+    <div class="card-list" fxLayout="row wrap" fxLayoutGap="4px">
+      <div
+        class="card"
+        fxLayout="column"
+        *ngFor="let contact of contactList; let i = index"
+      >
+        <span class="p-l-4 p-r-4">
+          <img
+            src="https://pbs.twimg.com/profile_images/566996160204644352/W9hRSNuY.jpeg"
+            alt="Avatar"
+            class="card-image"
+        /></span>
+        <div class="card-content">
+          <h4>
+            <b>{{ contact?.firstName }} {{ contact?.lastName }}</b>
+          </h4>
+          <p>{{ contact?.phone }}</p>
+          <div>
+            <button
+              fxLayoutAlign="center center"
+              mat-raised-button
+              class="Primary m-t-12 p-l-4"
+              (click)="onDetailClick(i)"
+            >
+              Details
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
