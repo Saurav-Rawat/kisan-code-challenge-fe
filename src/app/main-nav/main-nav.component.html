@@ -24,6 +24,13 @@
         [routerLinkActiveOptions]="{ exact: true }"
         >Message List</a
       >
+      <a
+        mat-list-item
+        routerLink="/otp-verification"
+        routerLinkActive="active-side-nav"
+        [routerLinkActiveOptions]="{ exact: true }"
+        >Otp Verification Service</a
+      >
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -52,6 +59,13 @@
         routerLinkActive="active"
         [routerLinkActiveOptions]="{ exact: true }"
         >Message List</a
+      >
+      <a
+        fxHide.lt-sm
+        routerLink="/otp-verification"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        >Otp Verification Service</a
       >
     </mat-toolbar>
     <!-- Add Content Here -->

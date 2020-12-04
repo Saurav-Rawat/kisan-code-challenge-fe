@@ -7,13 +7,14 @@ import { MessageService } from '../services/message.service';
   styleUrls: ['./message-list.component.scss'],
 })
 export class MessageListComponent implements OnInit {
+  loading: boolean = true;
   listOfAllSms: any;
   constructor(private messageService: MessageService) {}
 
   ngOnInit(): void {
     this.listOfAllSms = this.messageService.getAllMessage().subscribe((res) => {
+      this.loading = false;
       this.listOfAllSms = res;
-      console.log(res);
     });
   }
 }

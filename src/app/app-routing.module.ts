@@ -10,6 +10,7 @@ const routes: Routes = [
   { path: 'contact-details/:id', component: ContactDetailsComponent },
   { path: 'send-message/:id', component: SendMessageComponent },
   { path: 'message-list', component: MessageListComponent },
+  { path: 'otp-verification', component: SendMessageComponent },
 ];
 
 @NgModule({

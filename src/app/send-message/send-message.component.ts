@@ -25,7 +25,11 @@ export class SendMessageComponent implements OnInit {
   ngOnInit(): void {
     this.formInit();
     this.activatedRoute.params.subscribe((param) => {
-      this.getContactInfo(param['id']);
+      if (!param['id']) {
+        this.getContactInfo(1);
+      } else {
+        this.getContactInfo(param['id']);
+      }
     });
   }
 
